@@ -19,7 +19,7 @@ Suggestions for improvements
 
 Note
 
-This implementation is part of a learning process and may contain errors
+This implementation is part of a learning process and may contain errors.
 Any identified errors will be corrected as soon as they are discovered
 
 Contributing
