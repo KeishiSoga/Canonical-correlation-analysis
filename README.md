@@ -4,12 +4,14 @@
 rm(list = ls())
 
 #import packages
+
 library(PMA)
 library(ggplot2)
 library(ggExtra)
 
 
 #Data Set
+
 set.seed(123)
 x1 <- matrix(rnorm(50 * 10), nrow = 50, ncol = 10)
 x2 <- matrix(rnorm(50 * 10), nrow = 50, ncol = 10)
@@ -21,7 +23,8 @@ v6 <- matrix(c(rep(1,25),rep(0,25)),ncol=1)
 v6 <- as.factor(v6)
 
 
-#permutation test_並び替え
+#permutation test_sorting
+
 N <- 10
 corPerm_1 <- numeric(length = N) 
 corPerm_2 <- numeric(length = N) 
@@ -34,21 +37,25 @@ corPerm_total<- numeric(length = N)
 for(i in 1:N)
 {
   #Sorting
+  
   x1_sample <- matrix(sample(c(x1)), nrow = 50, ncol = 10)
   x2_sample <- matrix(sample(c(x2)), nrow = 50, ncol = 10)
   x3_sample <- matrix(sample(c(x3)), nrow = 50, ncol = 10)
   x4_sample <- matrix(sample(c(x4)), nrow = 50, ncol = 10)
   
   #Store in a list
+  
   xlist_sample <- list(x1_sample, x2_sample, x3_sample, x4_sample)
   
   #SMCCA in Sorted Datasets
   
   #Execute MultiCCA.permute_sample
+  
   perm_out_sample <- MultiCCA.permute(xlist_sample, nperms=10)#10permutations
   
   
   #Execute MultiCCA_sample
+  
   out_sample <- MultiCCA(xlist_sample, penalty=perm_out_sample$bestpenalties)
   
 
