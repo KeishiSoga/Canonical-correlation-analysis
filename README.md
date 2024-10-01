@@ -114,7 +114,7 @@ cor_6=cor(x_3,x_4)
 cor_total=cor_1+cor_2+cor_3+cor_4+cor_5+cor_6
 
 
-# permutation_testのfigure
+# permutation_test_figure
 
 results.df <- data.frame(x = unlist(corPerm_total))
 ggplot(results.df,aes(x)) + 
