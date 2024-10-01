@@ -1,6 +1,6 @@
-#########################################################
-#Canonical-correlation-analysis
-#########################################################
+
+# Canonical-correlation-analysis
+
 rm(list = ls())
 
 #import packages
@@ -121,9 +121,9 @@ cor_total#2.249144
 corPerm_total
 p_value_Cor <- sum(unlist(corPerm_total)>2.249144)/length(corPerm_total)
 p_value_Cor
-###########################################################################
-#Scatter Plot
-###########################################################################
+
+# Scatter Plot
+
 data<-data.frame(x_1,x_2,x_3,x_4,v6)
 
 scatter_plot_color <- ggplot(data,aes(x = x_1, y = x_2))+
