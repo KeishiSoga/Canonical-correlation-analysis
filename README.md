@@ -1,4 +1,4 @@
-# Canonical-correlation-analysis
+#Canonical-correlation-analysis
 
 
 rm(list = ls())
