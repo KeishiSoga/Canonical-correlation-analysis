@@ -12,7 +12,7 @@ Still in the process of learning the theoretical aspects of Canonical Correlatio
 Need to further understand Permutation tests
 
 Feedback Welcome
-We warmly welcome the following types of feedback on the code and implementation:
+I warmly welcome the following types of feedback on the code and implementation:
 
 Identification of errors
 Suggestions for improvements
