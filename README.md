@@ -23,7 +23,7 @@ v6 <- matrix(c(rep(1,25),rep(0,25)),ncol=1)
 v6 <- as.factor(v6)
 
 
-#permutation test_sorting
+# permutation test_sorting
 
 N <- 10
 corPerm_1 <- numeric(length = N) 
@@ -60,6 +60,7 @@ for(i in 1:N)
   
 
   #Fitting to a Regression Model_sample
+  
   x_1_sample <- x1_sample%*%out_sample$ws[[1]]
   x_2_sample <- x2_sample%*%out_sample$ws[[2]]
   x_3_sample <- x3_sample%*%out_sample$ws[[3]]
@@ -77,19 +78,23 @@ for(i in 1:N)
 
 
 #Store in a list
+
 xlist <- list(x1,x2,x3,x4)
 
 
-#Execute MultiCCA.permute
+# Execute MultiCCA.permute
+
 perm.out <- MultiCCA.permute(xlist, nperms=10)#10permutations
 print(perm.out)
 
 #Execute MultiCCA
+
 out <- MultiCCA(xlist, penalty=perm.out$bestpenalties)
 print(out)
 
 
 #Fitting to a Regression Model
+
 x_1 <- x1%*%out$ws[[1]]
 x_2 <- x2%*%out$ws[[2]]
 x_3 <- x3%*%out$ws[[3]]
@@ -98,6 +103,7 @@ x_4 <- x4%*%out$ws[[4]]
 
 
 #Sum of Correlation Coefficients
+
 cor_1=cor(x_1,x_2)
 cor_2=cor(x_1,x_3)
 cor_3=cor(x_1,x_4)
@@ -108,7 +114,8 @@ cor_6=cor(x_3,x_4)
 cor_total=cor_1+cor_2+cor_3+cor_4+cor_5+cor_6
 
 
-#permutation_testのfigure
+# permutation_testのfigure
+
 results.df <- data.frame(x = unlist(corPerm_total))
 ggplot(results.df,aes(x)) + 
   geom_histogram(color="darkgreen",fill="lightseagreen") +
