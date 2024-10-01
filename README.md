@@ -1,7 +1,9 @@
+#########################################################
 #Canonical-correlation-analysis
-
-
+#########################################################
 rm(list = ls())
+
+#import packages
 library(PMA)
 library(ggplot2)
 library(ggExtra)
@@ -119,11 +121,11 @@ cor_total#2.249144
 corPerm_total
 p_value_Cor <- sum(unlist(corPerm_total)>2.249144)/length(corPerm_total)
 p_value_Cor
-
-
-
+###########################################################################
+#Scatter Plot
+###########################################################################
 data<-data.frame(x_1,x_2,x_3,x_4,v6)
-# Scatter Plot
+
 scatter_plot_color <- ggplot(data,aes(x = x_1, y = x_2))+
   geom_point(aes(x=x_1, y=x_2, color = v6)) +
   geom_smooth(method = "lm", color = "red",
