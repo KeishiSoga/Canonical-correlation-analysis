@@ -7,7 +7,7 @@ library(ggplot2)
 library(ggExtra)
 
 
-# Data set creation
+#Data Set
 set.seed(123)
 x1 <- matrix(rnorm(50 * 10), nrow = 50, ncol = 10)
 x2 <- matrix(rnorm(50 * 10), nrow = 50, ncol = 10)
@@ -42,11 +42,11 @@ for(i in 1:N)
   
   #SMCCA in Sorted Datasets
   
-  # Execute MultiCCA.permute_sample
+  #Execute MultiCCA.permute_sample
   perm_out_sample <- MultiCCA.permute(xlist_sample, nperms=10)#10permutations
   
   
-  # Execute MultiCCA_sample
+  #Execute MultiCCA_sample
   out_sample <- MultiCCA(xlist_sample, penalty=perm_out_sample$bestpenalties)
   
 
