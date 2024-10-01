@@ -73,11 +73,11 @@ for(i in 1:N)
 xlist <- list(x1,x2,x3,x4)
 
 
-# Execute MultiCCA.permute
+#Execute MultiCCA.permute
 perm.out <- MultiCCA.permute(xlist, nperms=10)#10permutations
 print(perm.out)
 
-# Execute MultiCCA
+#Execute MultiCCA
 out <- MultiCCA(xlist, penalty=perm.out$bestpenalties)
 print(out)
 
